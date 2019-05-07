@@ -192,27 +192,13 @@ def compute_frequency(table,item):
 
 def main():
     #replace header with header for watch dataset
-    header = ["level", "lang", "tweets", "phd", "interviewed_well"]
+    header = ["total", "price", "condition", "MPN", "movement","case_material","band_material","model","listing_type","deal_type"]
 
     #read csv of clean ebay data in and assign it to a variable
-    interview = [
-        ["Senior", "Java", "no", "no", "False"],
-        ["Senior", "Java", "no", "yes", "False"],
-        ["Mid", "Python", "no", "no", "True"],
-        ["Junior", "Python", "no", "no", "True"],
-        ["Junior", "R", "yes", "no", "True"],
-        ["Junior", "R", "yes", "yes", "False"],
-        ["Mid", "R", "yes", "yes", "True"],
-        ["Senior", "Python", "no", "no", "False"],
-        ["Senior", "R", "yes", "no", "True"],
-        ["Junior", "Python", "yes", "no", "True"],
-        ["Senior", "Python", "yes", "yes", "True"],
-        ["Mid", "Python", "no", "yes", "True"],
-        ["Mid", "Java", "yes", "no", "True"],
-        ["Junior", "Python", "no", "yes", "False"]]
+    watch_dataset = read_csv("final_training_dataset.csv")
     
-    interview_rules2 = apriori(header,interview,0.35,0.75)
-    for rules in interview_rules2:
+    watch_rules = apriori(header,watch_dataset,0.35,0.80)
+    for rules in watch_rules:
         print(rules)
 
 main()
