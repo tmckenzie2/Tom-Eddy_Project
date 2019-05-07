@@ -37,10 +37,13 @@ def main():
             del(row[10])
 
     clean_ebay_data = []
-    clean_ebay_data.append(['total','price','condition','MPN','movement','case_material','band_material','model','listing_type','deal_type'])
+    clean_ebay_data.append(['total','price','condition','movement','case_material','band_material','model','listing_type','deal_type'])
     for row in ebay_data:
         if (len(row) == 10):
             clean_ebay_data.append(row)
+
+    for row in ebay_data:
+        del(row[3])
             
 
 
