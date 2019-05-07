@@ -38,11 +38,12 @@ def main():
         del row[0]
         del row[0]
         del row[9]
+        del row[-1]
 
-    write_to_file(table,'ebay_data_clean_temp.csv')
+    write_to_file(table,'ebay_data_dirty_temp.csv')
         
 
-    remove_modelnums_not_applicable('ebay_data_clean_temp.csv')
+    remove_modelnums_not_applicable('ebay_data_dirty_temp.csv')
 
     
 
