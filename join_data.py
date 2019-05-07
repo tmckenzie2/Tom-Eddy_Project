@@ -44,6 +44,6 @@ def main():
             
 
 
-    write_to_file(clean_ebay_data,'final_dataset.csv')
+    write_to_file(clean_ebay_data,'final_training_dataset.csv')
 
 main()
