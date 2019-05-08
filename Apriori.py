@@ -1,35 +1,8 @@
-import csv
 import itertools
+import utils as u
 
 
-def get_column(table, column_index):
-    '''
-    Reads in a table and an index for a column in that table, and returns that whole column as a
-    list.
-    '''
-    column = []
-    for row in table:
-        if row[column_index] != "NA":
-            column.append(row[column_index])
-
-    return column
-
-
-def read_csv(filename):
-    '''
-    Reads in a csv file and returns a table as a list of lists (rows)
-    '''
-    the_file = open(filename, 'r')
-    the_reader = csv.reader(the_file, dialect='excel')
-    table = []
-    for row in the_reader:
-        if len(row) > 0:
-            table.append(row)
-    the_file.close()
-    return table
-
-
-def apriori_prune_C1(table,Ck,minsup):
+def apriori_prune_C1(table, Ck, minsup):
     '''
     takes in a more complex dataset of only one value each, a set of unique attributes Ck and a minsup and removes every
     attribute that is below the minsup for designated minsup
@@ -200,16 +173,12 @@ def compute_frequency(table,item):
 
 
 def main():
-<<<<<<< HEAD
-    # Replace header with header for watch dataset
-    header = ["total", "price", "condition", "MPN", "movement","case_material","band_material","model","listing_type","deal_type"]
-=======
-    #replace header with header for watch dataset
-    header = ["total", "price", "condition", "movement","case_material","band_material","model","listing_type","deal_type"]
->>>>>>> 2c7a4709dbabbe982c10e632b33f98bcf76ad245
+    # replace header with header for watch dataset
+    header = ["total", "price", "condition", "movement", "case_material", "band_material", "model", "listing_type",
+              "deal_type"]
 
-    # Read csv of clean ebay data in and assign it to a variable
-    watch_dataset = read_csv("final_training_dataset.csv")
+    # read csv of clean ebay data in and assign it to a variable
+    watch_dataset = u.read_csv("final_training_dataset.csv")
     
     watch_rules = apriori(header,watch_dataset,0.35,0.80)
     for rules in watch_rules:

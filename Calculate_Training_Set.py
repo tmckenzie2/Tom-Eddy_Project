@@ -55,7 +55,7 @@ def response(Keywords, pageNum, minPrice, maxPrice,api):
 
 
 # A function to pull attributes from items
-def get_attributes(items,index,df):
+def get_attributes(items, index, df):
     for item in items:
         price = int(round(float(item.currentprice.string)))
         dateSold = item.endtime.string
@@ -70,7 +70,7 @@ def get_attributes(items,index,df):
     
         # movement, brand, case material, and band material attributes for each item
         # if the attributes are left out of the e-bay pages ITEM SPECIFICS then they
-        #will be returned as NULL
+        # will be returned as NULL
         movement = get_details(get_page(url), "Movement:")
         model = get_details(get_page(url), "Model:")
         case_material = get_details(get_page(url), "Case Material:")
@@ -160,8 +160,6 @@ def main():
 
     # remove rows with NULL entries for any attributes from the training set
     remove_NULL_vals('ebay_data.csv')
-
-    
 
     #df.to_excel('ebay_data.xlsx', index=False)
 

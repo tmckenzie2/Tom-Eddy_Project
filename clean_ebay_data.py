@@ -1,23 +1,4 @@
-import csv
-
-# Reads in a 2d list and a string that you would like to save a file as
-# and writes that 2d list to the file named after save_file_as
-def write_to_file(table_name,save_file_as):
-    with open(save_file_as, "w", newline='') as f:
-        writer = csv.writer(f)
-        writer.writerows(table_name)
-
-
-# Reads in a csv file and returns a table as a list of lists (rows)
-def read_csv(filename):
-    the_file = open(filename, 'r')
-    the_reader = csv.reader(the_file, dialect='excel')
-    table = []
-    for row in the_reader:
-        if len(row) > 0:
-            table.append(row)
-    the_file.close()
-    return table
+import utils as u
 
 
 def clean_watch_model(model_col):
@@ -179,21 +160,8 @@ def remove_modelnums_not_applicable(file_name):
                         out_file.write(line)
 
 
-def get_column(table, column_index):
-    '''
-    Reads in a table and an index for a column in that table, and returns that whole column as a
-    list.
-    '''
-    column = []
-    for row in table:
-        if row[column_index] != "NA":
-            column.append(row[column_index])
-
-    return column
-
-
 def main():
-    table = read_csv('ebay_data_dirty.csv')
+    table = u.read_csv('ebay_data_dirty.csv')
 
     for row in table:
         del row[0]
@@ -201,11 +169,11 @@ def main():
         del row[9]
         del row[-1]
 
-    write_to_file(table, 'ebay_data_dirty_temp.csv')
+    u.write_to_file(table, 'ebay_data_dirty_temp.csv')
     remove_modelnums_not_applicable('ebay_data_dirty_temp.csv')
-    table_w_modelnums = read_csv('ebay_data_clean.csv')
+    table_w_modelnums = u.read_csv('ebay_data_clean.csv')
 
-    case_col = get_column(table_w_modelnums, 5)
+    case_col = u.get_column(table_w_modelnums, 5)
     clean_case = clean_case_material(case_col)
 
     count = 0
@@ -214,7 +182,7 @@ def main():
         row.insert(5,str(clean_case[count]))
         count = count + 1
 
-    movement_col = get_column(table_w_modelnums, 4)
+    movement_col = u.get_column(table_w_modelnums, 4)
     clean_movement = clean_watch_movement(movement_col)
 
     count = 0
@@ -223,7 +191,7 @@ def main():
         row.insert(4,str(clean_movement[count]))
         count = count + 1
 
-    band_col = get_column(table_w_modelnums, 6)
+    band_col = u.get_column(table_w_modelnums, 6)
     clean_band = clean_band_material(band_col)
 
     count = 0
@@ -232,7 +200,7 @@ def main():
         row.insert(6,str(clean_band[count]))
         count = count + 1
 
-    mod_col = get_column(table_w_modelnums, 7)
+    mod_col = u.get_column(table_w_modelnums, 7)
     clean_mod = clean_watch_model(mod_col)
 
     count = 0
@@ -240,7 +208,7 @@ def main():
         del row[7]
         row.insert(7,str(clean_mod[count]))
         count = count + 1
-    write_to_file(table_w_modelnums, "ebay_data_clean.csv")
+    u.write_to_file(table_w_modelnums, "ebay_data_clean.csv")
 
 
 main()
