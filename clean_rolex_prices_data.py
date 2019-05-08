@@ -1,4 +1,3 @@
-import csv
 import utils as u
 
 
@@ -20,7 +19,8 @@ def main():
         clean_table.append([row[0], clean_prices[count]])
         count = count + 1
 
-    write_to_file(clean_table, 'rolex_prices_data_clean.csv')
+    u.write_to_file(clean_table, 'rolex_prices_data_clean.csv')
 
 
-main()
+if __name__ == '__main__':
+    main()

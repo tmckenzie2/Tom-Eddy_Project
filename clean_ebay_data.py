@@ -4,126 +4,126 @@ import utils as u
 def clean_watch_model(model_col):
     clean_model_col = []
     for i in model_col:
-        if("oysterdate".casefold() in i.casefold()):
+        if "oysterdate".casefold() in i.casefold():
             clean_model_col.append('Oysterdate')
-        elif("Datejust 2".casefold() in i):
+        elif "Datejust 2".casefold() in i:
             clean_model_col.append('Datejust 2')
-        elif("Datejust II".casefold() in i):
+        elif "Datejust II".casefold() in i:
             clean_model_col.append('Datejust 2')
-        elif("just".casefold() in i.casefold()):
+        elif "just".casefold() in i.casefold():
             clean_model_col.append('Datejust')
-        elif("Explorer II" in i):
+        elif "Explorer II" in i:
             clean_model_col.append('Explorer 2')
-        elif("Explorer 2".casefold() in i.casefold()):
+        elif "Explorer 2".casefold() in i.casefold():
             clean_model_col.append('Explorer 2')
-        elif("Explorer".casefold() in i.casefold()):
+        elif "Explorer".casefold() in i.casefold():
             clean_model_col.append('Explorer')
-        elif("Yacht".casefold() in i.casefold()):
+        elif "Yacht".casefold() in i.casefold():
             clean_model_col.append('Yachmaster')
-        elif("midas".casefold() in i.casefold()):
+        elif "midas".casefold() in i.casefold():
             clean_model_col.append('King Midas')
-        elif("Air".casefold() in i.casefold()):
+        elif "Air".casefold() in i.casefold():
             clean_model_col.append('Air-King')
-        elif("Cellini".casefold() in i.casefold()):
+        elif "Cellini".casefold() in i.casefold():
             clean_model_col.append('Cellini')
-        elif("daytona".casefold() in i.casefold()):
+        elif "daytona".casefold() in i.casefold():
             clean_model_col.append('Daytona')
-        elif("mast II".casefold() in i.casefold()):
+        elif "mast II".casefold() in i.casefold():
             clean_model_col.append('GMT-Master 2')
-        elif("Master II".casefold() in i):
+        elif "Master II".casefold() in i:
             clean_model_col.append('GMT-Master 2')
-        elif("milgaus".casefold() in i.casefold()):
+        elif "milgaus".casefold() in i.casefold():
             clean_model_col.append('Milgauss')
-        elif("perpetual".casefold() in i.casefold()):
+        elif "perpetual".casefold() in i.casefold():
             clean_model_col.append('Oysterdate')
-        elif("master".casefold() in i.casefold()):
+        elif "master".casefold() in i.casefold():
             clean_model_col.append('GMT-Master')
-        elif("milgaus".casefold() in i.casefold()):
+        elif "milgaus".casefold() in i.casefold():
             clean_model_col.append('Milgauss')
-        elif("pilot".casefold() in i.casefold()):
+        elif "pilot".casefold() in i.casefold():
             clean_model_col.append('Pilot')
-        elif("president".casefold() in i.casefold()):
+        elif "president".casefold() in i.casefold():
             clean_model_col.append('President')
-        elif("deepsea".casefold() in i.casefold()):
+        elif "deepsea".casefold() in i.casefold():
             clean_model_col.append('Sea-Dweller')
-        elif("dweller".casefold() in i.casefold()):
+        elif "dweller".casefold() in i.casefold():
             clean_model_col.append('Sea-Dweller')
-        elif("precision".casefold() in i.casefold()):
+        elif "precision".casefold() in i.casefold():
             clean_model_col.append('Oysterdate')
-        elif("oyster".casefold() in i.casefold()):
+        elif "oyster".casefold() in i.casefold():
             clean_model_col.append('Oysterdate')
-        elif("turn-o".casefold() in i.casefold()):
+        elif "turn-o".casefold() in i.casefold():
             clean_model_col.append('Turn-O-Graph')
-        elif("submarine".casefold() in i.casefold()):
+        elif "submarine".casefold() in i.casefold():
             clean_model_col.append('Submariner')
-        elif("turn-o".casefold() in i.casefold()):
+        elif "turn-o".casefold() in i.casefold():
             clean_model_col.append('Turn-O-Graph')
-        elif("vintage".casefold() in i.casefold()):
+        elif "vintage".casefold() in i.casefold():
             clean_model_col.append('Vintage')
-        elif("date".casefold() in i.casefold()):
+        elif "date".casefold() in i.casefold():
             clean_model_col.append('Datejust')
         else:
             clean_model_col.append(i)
-    return (clean_model_col)
+    return clean_model_col
 
 
 def clean_case_material(case_col):
 
     clean_case_col = []
     for i in case_col:
-        if("plati".casefold() in i.casefold()):
+        if "plati".casefold() in i.casefold():
             clean_case_col.append('Platinum')
-        elif("14".casefold() in i.casefold()):
+        elif "14".casefold() in i.casefold():
             clean_case_col.append('14k Gold')
-        elif("18" in i.casefold()):
+        elif "18" in i.casefold():
             clean_case_col.append('18k Gold')
-        elif("gold".casefold() in i.casefold()):
+        elif "gold".casefold() in i.casefold():
             clean_case_col.append('18k Gold')
-        elif("silv".casefold() in i.casefold()):
+        elif "silv".casefold() in i.casefold():
             clean_case_col.append('Silver')
-        elif("stain".casefold() in i.casefold()):
+        elif "stain".casefold() in i.casefold():
             clean_case_col.append('Stainless Steel')
-        elif("steel".casefold() in i.casefold()):
+        elif "steel".casefold() in i.casefold():
             clean_case_col.append('Stainless Steel')
         else:
             clean_case_col.append(i)
-    return (clean_case_col)
+    return clean_case_col
 
 
 def clean_band_material(band_col):
     clean_band_col = []
     for i in band_col:
-        if("& 10k".casefold() in i.casefold()):
+        if "& 10k".casefold() in i.casefold():
             clean_band_col.append('Two Tone 10k Gold')
-        elif("& 14k".casefold() in i.casefold()):
+        elif "& 14k".casefold() in i.casefold():
             clean_band_col.append('Two Tone 14k Gold')
-        elif("and" in i.casefold()):
+        elif "and" in i.casefold():
             clean_band_col.append('Two Tone 18k Gold')
-        elif("&" in i.casefold()):
+        elif "&" in i.casefold():
             clean_band_col.append('Two Tone 18k Gold')
-        elif("Croco".casefold() in i.casefold()):
+        elif "Croco".casefold() in i.casefold():
             clean_band_col.append('Crocodile')
-        elif("alliga".casefold() in i.casefold()):
+        elif "alliga".casefold() in i.casefold():
             clean_band_col.append('Alligator')
-        elif("ceram" in i.casefold()):
+        elif "ceram" in i.casefold():
             clean_band_col.append('Ceramic')
-        elif("leath" in i.casefold()):
+        elif "leath" in i.casefold():
             clean_band_col.append('Leather')
-        elif("plati".casefold() in i.casefold()):
+        elif "plati".casefold() in i.casefold():
             clean_band_col.append('Platinum')
-        elif("14".casefold() in i.casefold()):
+        elif "14".casefold() in i.casefold():
             clean_band_col.append('14k Gold')
-        elif("18" in i.casefold()):
+        elif "18" in i.casefold():
             clean_band_col.append('18k Gold')
-        elif("gold".casefold() in i.casefold()):
+        elif "gold".casefold() in i.casefold():
             clean_band_col.append('18k Gold')
-        elif("stain".casefold() in i.casefold()):
+        elif "stain".casefold() in i.casefold():
             clean_band_col.append('Stainless Steel')
-        elif("steel".casefold() in i.casefold()):
+        elif "steel".casefold() in i.casefold():
             clean_band_col.append('Stainless Steel')
-        elif("oyster".casefold() in i.casefold()):
+        elif "oyster".casefold() in i.casefold():
             clean_band_col.append('Stainless Steel')
-        elif("rubber".casefold() in i.casefold()):
+        elif "rubber".casefold() in i.casefold():
             clean_band_col.append('Rubber')
         else:
             clean_band_col.append(i)
@@ -133,30 +133,30 @@ def clean_band_material(band_col):
 def clean_watch_movement(movement_col):
     clean_movement_col = []
     for i in movement_col:
-        if("Quar".casefold() in i.casefold()):
+        if "Quar".casefold() in i.casefold():
             clean_movement_col.append('Quartz')
-        elif("3035".casefold() in i.casefold()):
+        elif "3035".casefold() in i.casefold():
             clean_movement_col.append('Automatic')
-        elif("manual".casefold() in i.casefold()):
+        elif "manual".casefold() in i.casefold():
             clean_movement_col.append('Manual')
-        elif("auto".casefold() in i.casefold()):
+        elif "auto".casefold() in i.casefold():
             clean_movement_col.append('Automatic')
-        elif("mechan".casefold() in i.casefold()):
+        elif "mechan".casefold() in i.casefold():
             clean_movement_col.append('Automatic')
         
         
         else:
             clean_movement_col.append(i)
 
-    return (clean_movement_col)
+    return clean_movement_col
 
 
 def remove_modelnums_not_applicable(file_name):
-     with open('ebay_data_clean.csv', 'w', newline='') as out_file:
-         with open(file_name, 'r') as my_file:
-             for line in my_file:
+    with open('ebay_data_clean.csv', 'w', newline='') as out_file:
+        with open(file_name, 'r') as my_file:
+            for line in my_file:
                     columns = line.strip().split(',')
-                    if all( value.lower() != 'does not apply' for value in columns):
+                    if all(value.lower() != 'does not apply' for value in columns):
                         out_file.write(line)
 
 
@@ -211,4 +211,5 @@ def main():
     u.write_to_file(table_w_modelnums, "ebay_data_clean.csv")
 
 
-main()
+if __name__ == '__main__':
+    main()

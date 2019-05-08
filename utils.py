@@ -32,3 +32,24 @@ def get_column(table, column_index):
             column.append(row[column_index])
 
     return column
+
+
+# Get values for certain column index and force float type
+def get_values(table, column_index):
+    values = []
+    for row in table:
+        try:
+            values.append(float(row[column_index]))
+        except:
+            values.append(row[column_index])
+    return values
+
+
+# Given column name, return integer index
+def get_index(myList, attribute):
+    headers = myList[0]
+    for i in range(len(headers)):
+        if headers[i] == attribute:
+            index = i
+
+    return index

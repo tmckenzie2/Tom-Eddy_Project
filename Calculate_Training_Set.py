@@ -104,7 +104,6 @@ def remove_NULL_vals(file_name):
 
 def main():
     # Find the raw data using ebay api and export to excel file
-
     # Launch Mode
     '''
     Keywords = input('Enter your Keywords \n')
@@ -115,7 +114,6 @@ def main():
 
     # Test Mode
     Keywords = "Rolex Wristwatch"
-    condition = "Used"
     minPrice = 3000
     maxPrice = 12000
 
@@ -126,20 +124,17 @@ def main():
     pageNum = 1
     index = 0
 
-    # Declare data frame
-    global df
     df = pd.DataFrame(columns=('date', 'total', 'price', 'condition', 'movement', 'case material', 'band material',
                                'model', 'listingType', 'start', 'url'), dtype=float)
 
-    # Collect all items from ebay on page1, page2, page3, and page4 
-    soup = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
-    pageNum += 1
-    soup_pg_2 = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
-    pageNum += 1
-    soup_pg_3 = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
-    pageNum += 1
-    soup_pg_4 = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
-    items = soup.find_all('item') + soup_pg_2.find_all('item') + soup_pg_3.find_all('item') + soup_pg_4.find_all('item')
+    # Collect all items from ebay on page1 through 4
+    while pageNum <= 4:
+        soup = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
+        if pageNum == 1:
+            items = soup.find_all('item')
+        else:
+            items += soup.find_all('item')
+        pageNum += 1
 
     # Call get_attributes function to get the attributes of the watches for a training set some of the attributes
     # will be NULL so we will
@@ -155,12 +150,14 @@ def main():
     df.to_excel(writer,'Sheet1',index=False)
     writer.save()
     '''
-    # Write datafram to csv file
+    # Write dataframe to csv file
     df.to_csv('ebay_data.csv')
 
     # remove rows with NULL entries for any attributes from the training set
     remove_NULL_vals('ebay_data.csv')
 
-    #df.to_excel('ebay_data.xlsx', index=False)
+    # df.to_excel('ebay_data.xlsx', index=False)
 
-main()
+
+if __name__ == '__main__':
+    main()

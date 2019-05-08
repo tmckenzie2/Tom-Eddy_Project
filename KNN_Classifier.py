@@ -64,8 +64,8 @@ def main():
     split = 0.67
     # Replace data.csv with watch data, modify indexes of the data in some of the functions
     loadDataset('data.csv', split, trainingSet, testSet)
-    print ('Train set: ' + repr(len(trainingSet)))
-    print ('Test set: ' + repr(len(testSet)))
+    print('Train set: ' + repr(len(trainingSet)))
+    print('Test set: ' + repr(len(testSet)))
     # generate predictions
     predictions=[]
     k = 5
@@ -78,4 +78,5 @@ def main():
     print('Accuracy: ' + repr(accuracy) + '%')
 
 
-main()
+if __name__ == '__main__':
+    main()

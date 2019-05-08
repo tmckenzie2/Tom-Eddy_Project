@@ -151,7 +151,7 @@ def compute_unique_values(header,table):
 
 def frequency(table,item):
     '''
-    a slightly modified function that computes the frequency of a specific item occuring in a table
+    A slightly modified function that computes the frequency of a specific item occuring in a table
     '''
     item_count = 0
     for row in table:
@@ -162,7 +162,7 @@ def frequency(table,item):
 
 def compute_frequency(table,item):
     '''
-    computes the frequency of a specific item occuring in a table
+    Computes the frequency of a specific item occuring in a table
     '''
     item_count = 0
     for row in table:
@@ -185,4 +185,5 @@ def main():
         print(rules)
 
 
-main()
+if __name__ == '__main__':
+    main()
