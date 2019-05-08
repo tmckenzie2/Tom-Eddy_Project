@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c220cac5-ef82-4b49-993b-8b52a7bbf41b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/linear_regression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apriori.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apriori.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculate_Training_Set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calculate_Training_Set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KNN_Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/KNN_Classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean_ebay_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/clean_ebay_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean_rolex_prices_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/clean_rolex_prices_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebay_data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rolex_prices_data_clean.csv" beforeDir="false" afterPath="$PROJECT_DIR$/rolex_prices_data_clean.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="linear_regression.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="linear_regression.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/linear_regression.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
@@ -30,6 +21,15 @@
               <folding>
                 <element signature="e#133#150#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Calculate_Training_Set.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Calculate_Training_Set.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3062">
+              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -94,12 +94,12 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/join_data.py" />
         <option value="$PROJECT_DIR$/Apriori.py" />
-        <option value="$PROJECT_DIR$/Calculate_Training_Set.py" />
         <option value="$PROJECT_DIR$/clean_ebay_data.py" />
         <option value="$PROJECT_DIR$/clean_rolex_prices_data.py" />
         <option value="$PROJECT_DIR$/KNN_Classifier.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/linear_regression.py" />
+        <option value="$PROJECT_DIR$/Calculate_Training_Set.py" />
       </list>
     </option>
   </component>
@@ -286,9 +286,9 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30809674" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30809674" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1890625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1890625" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32912722" />
@@ -353,16 +353,6 @@
     <entry file="file://$PROJECT_DIR$/join_data.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calculate_Training_Set.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="162" column="10" selection-start-line="162" selection-start-column="10" selection-end-line="162" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clean_ebay_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="632">
@@ -416,6 +406,13 @@
           <folding>
             <element signature="e#133#150#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calculate_Training_Set.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3062">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
         </state>
       </provider>
     </entry>
