@@ -37,12 +37,24 @@ def main():
         if (len(row) == 11):
             del(row[10])
     clean_ebay_data = []
+<<<<<<< HEAD
     clean_ebay_data.append(['total', 'price', 'condition', 'MPN', 'movement', 'case_material', 'band_material', 'model',
                             'listing_type', 'deal_type'])
     for row in ebay_data:
         if (len(row) == 10):
             clean_ebay_data.append(row)
     write_to_file(clean_ebay_data, 'final_training_dataset.csv')
+=======
+    clean_ebay_data.append(['total','price','condition','movement','case_material','band_material','model','listing_type','deal_type'])
+    for row in ebay_data:
+        if (len(row) == 10):
+            clean_ebay_data.append(row)
+
+    for row in ebay_data:
+        del(row[3])
+            
+
+>>>>>>> 2c7a4709dbabbe982c10e632b33f98bcf76ad245
 
 
 main()

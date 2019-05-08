@@ -200,8 +200,13 @@ def compute_frequency(table,item):
 
 
 def main():
+<<<<<<< HEAD
     # Replace header with header for watch dataset
     header = ["total", "price", "condition", "MPN", "movement","case_material","band_material","model","listing_type","deal_type"]
+=======
+    #replace header with header for watch dataset
+    header = ["total", "price", "condition", "movement","case_material","band_material","model","listing_type","deal_type"]
+>>>>>>> 2c7a4709dbabbe982c10e632b33f98bcf76ad245
 
     # Read csv of clean ebay data in and assign it to a variable
     watch_dataset = read_csv("final_training_dataset.csv")
