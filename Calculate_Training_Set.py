@@ -3,18 +3,43 @@ from bs4 import BeautifulSoup
 from dateutil.parser import parse
 import pandas as pd
 import requests
-
+from pandas import ExcelWriter
+from pandas import ExcelFile
+import csv
+'''
+Important Note: run this code to calculate a training set of 100 items per execution
+In order to get a dataset of 1000 items, run the code 10 times and make sure to increment the integer 
+value of 1 in the line of code: soup = BeautifulSoup(response(Keywords, 1, minPrice, maxPrice, api).content, 'lxml')
+in main() each time you run it. You will also need to save the data to a separate csv file each time you execute,
+this means that in the line of code df.to_csv('ebay_data1.csv') and remove_NULL_vals('ebay_data1.csv')
+in main(), you need to change the file each time you run the code so that the file run in the previous
+execution is not overwritten and also change the file in the line of code: with open('ebay_data_dirty1.csv', 'w', newline='') as out_file:
+in the function remove_NULL_vals so that that file is also not overwritten.
+'''
 
 # A function that requests the url, and returns the html text to be parsed by the get_details function
 # The downside to requesting urls this way is that it takes a lot of time...
 def get_page(url):
-    response = requests.get(url)
+    response = requests.get(url, headers = {'Connection': 'close'})
     soup = BeautifulSoup(response.text, 'lxml')
     return soup
 
+# A function that will parse the html text of the page bobswatches.com/used-rolex-prices and return a table
+# of rolex models and their cooresponding classification so that we can classify the rolexes on ebay as a good
+# or a bad deal
+def get_prices_db(url):
+    data = []
+    table = url.find(attrs={'class':'watchPriceTable tablesorter'})
+    if table is not None:
+        rows = table.findAll('tr')
+        for row in rows:
+            cols = row.findAll('td')
+            cols = [ele.text.strip() for ele in cols]
+            data.append([ele for ele in cols if ele])
+    return data
 
 # A function that will parse the html of the page of each item and return an attribute description
-# (from the ebay ITEM SPECIFICS section) based on the attribute name input into the function we can
+#(from the ebay ITEM SPECIFICS section) based on the attribute name input into the function we can
 # utilize this to get attributes for the model, case material, band material, and movement of the
 # watches. There are also other attributes that we can use
 def get_details(url, att_name):
@@ -35,7 +60,6 @@ def get_details(url, att_name):
     
     return att_description
 
-
 # Must reiterate response to update page count
 def response(Keywords, pageNum, minPrice, maxPrice,api):
     response = api.execute('findCompletedItems', {
@@ -55,7 +79,7 @@ def response(Keywords, pageNum, minPrice, maxPrice,api):
 
 
 # A function to pull attributes from items
-def get_attributes(items, index, df):
+def get_attributes(items,index,df):
     for item in items:
         price = int(round(float(item.currentprice.string)))
         dateSold = item.endtime.string
@@ -70,7 +94,9 @@ def get_attributes(items, index, df):
     
         # movement, brand, case material, and band material attributes for each item
         # if the attributes are left out of the e-bay pages ITEM SPECIFICS then they
-        # will be returned as NULL
+        #will be returned as NULL
+        
+        MPN = get_details(get_page(url), "MPN:")
         movement = get_details(get_page(url), "Movement:")
         model = get_details(get_page(url), "Model:")
         case_material = get_details(get_page(url), "Case Material:")
@@ -82,19 +108,17 @@ def get_attributes(items, index, df):
         except:
             total = price
 
-    # push data to df
-        df.loc[index] = [date, total, price, cond, movement, case_material, band_material, model, listingType, start,
-                         url]
+        # push data to df
+        df.loc[index] = [date, total, price, cond, MPN, movement, case_material, band_material, model, listingType, start, url]
         index += 1
 
     return df
-
 
 # Reads in csv file and removes all rows in the file that have 'NULL' values for
 # any of the attributes then saves the rows with values that do not contain 'NULL'
 # to a new file
 def remove_NULL_vals(file_name):
-     with open('ebay_data_clean.csv', 'w', newline='') as out_file:
+     with open('ebay_data_dirty1.csv', 'w', newline='') as out_file:
          with open(file_name, 'r') as my_file:
              for line in my_file:
                     columns = line.strip().split(',')
@@ -102,18 +126,31 @@ def remove_NULL_vals(file_name):
                         out_file.write(line)
 
 
+#Reads in a table and an index for a column in that table, and returns that whole column as a
+#list
+def get_column(table, column_index):
+    column = []
+    for row in table:
+        if row[column_index] != "NA":
+            column.append(row[column_index])
+
+    return column
+
+
+#Reads in a 2d list and a string that you would like to save a file as
+#and writes that 2d list to the file named after save_file_as
+def write_to_file(table_name,save_file_as):
+    with open(save_file_as, "w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(table_name)
+
+        
+
 def main():
     # Find the raw data using ebay api and export to excel file
 
     # Launch Mode
-    '''
-    Keywords = input('Enter your Keywords \n')
-    condition = input("Condition: ")
-    minPrice = input("Minimum Price: ")
-    maxPrice = input("Maximum Price: ")
-    '''
 
-    # Test Mode
     Keywords = "Rolex Wristwatch"
     condition = "Used"
     minPrice = 3000
@@ -128,23 +165,18 @@ def main():
 
     # Declare data frame
     global df
-    df = pd.DataFrame(columns=('date', 'total', 'price', 'condition', 'movement', 'case material', 'band material',
-                               'model', 'listingType', 'start', 'url'), dtype=float)
+    df = pd.DataFrame(columns=('date', 'total', 'price', 'condition', 'MPN', 'movement', 'case material', 'band material', 'model', 'listingType', 'start', 'url'), dtype=float)
 
-    # Collect all items from ebay on page1, page2, page3, and page4 
-    soup = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
+    
+    # Run this to collect data from the ebay website with BeatifulSoup
+    # This code will return 100 results per page
+    soup = BeautifulSoup(response(Keywords, 1, minPrice, maxPrice, api).content, 'lxml')
     pageNum += 1
-    soup_pg_2 = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
-    pageNum += 1
-    soup_pg_3 = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
-    pageNum += 1
-    soup_pg_4 = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
-    items = soup.find_all('item') + soup_pg_2.find_all('item') + soup_pg_3.find_all('item') + soup_pg_4.find_all('item')
-
-    # Call get_attributes function to get the attributes of the watches for a training set some of the attributes
-    # will be NULL so we will
+    
+    items = soup.find_all('item')     # call get_attributes function to get the attributes of the watches for a training set some of the attributes will be NULL so we will
     # have to clean the data afterwards
     df = get_attributes(items, index, df)
+    
 
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
@@ -156,11 +188,26 @@ def main():
     writer.save()
     '''
     # Write datafram to csv file
-    df.to_csv('ebay_data.csv')
+    df.to_csv('ebay_data1.csv')
 
     # remove rows with NULL entries for any attributes from the training set
-    remove_NULL_vals('ebay_data.csv')
+    remove_NULL_vals('ebay_data1.csv')
+    
+    
+    rolex_prices_data = get_prices_db(get_page('https://www.bobswatches.com/used-rolex-prices'))
+    model_num = get_column(rolex_prices_data[1:], 0)
+    market_price = get_column(rolex_prices_data[1:],-1)
 
-    #df.to_excel('ebay_data.xlsx', index=False)
+    market_price_data = []
+
+    for i in model_num:
+        market_price_data.append([i])
+    count = 0
+    for row in market_price_data:
+        row.insert(1,market_price[count])
+        count = count + 1
+
+    write_to_file(market_price_data,'rolex_prices_data.csv')
+    
 
 main()
