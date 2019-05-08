@@ -1,6 +1,7 @@
 import csv
 import itertools
 
+
 def get_column(table, column_index):
     '''
     Reads in a table and an index for a column in that table, and returns that whole column as a
@@ -12,6 +13,7 @@ def get_column(table, column_index):
             column.append(row[column_index])
 
     return column
+
 
 def read_csv(filename):
     '''
@@ -25,6 +27,7 @@ def read_csv(filename):
             table.append(row)
     the_file.close()
     return table
+
 
 def apriori_prune_C1(table,Ck,minsup):
     '''
@@ -40,20 +43,21 @@ def apriori_prune_C1(table,Ck,minsup):
             L.append(c)
     return sorted(L)
 
+
 def compute_subsets(s):
     '''
     takes in a list and returns all subsets of that list
     '''
-    # base case
+    # Base case
     if len(s) == 0:
         return [[]]
-    # the input set is not empty, divide and conquer!
+    # The input set is not empty, divide and conquer!
     h, t = s[0], s[1:]
     ss_excl_h = compute_subsets(t)
     ss_incl_h = [([h] + ss) for ss in ss_excl_h]
     subsets = ss_incl_h + ss_excl_h
-
     return subsets
+
 
 def apriori_prune(table,Ck,minsup):
     '''
@@ -71,9 +75,11 @@ def apriori_prune(table,Ck,minsup):
             L.append(c)
     return sorted(L)
 
+
 def apriori_gen(itemsets, length):
     """Generates candidate k-itemsets."""
     return itertools.combinations(itemsets, length)
+
 
 def apriori(header,table, minsup, minconf):
     '''
@@ -118,6 +124,7 @@ def apriori(header,table, minsup, minconf):
     rules = generate_apriori_rules(table, final_no_dups, minconf)
     return rules
 
+
 def generate_apriori_rules(table, supported_itemsets, minconf):
     '''
     A function that takes in a more complex dataset, a list of supported itemsets for the dataset and a minimum confidence
@@ -149,9 +156,10 @@ def generate_apriori_rules(table, supported_itemsets, minconf):
             support = countLuR/len(table)
             lift = countLuR/(countL * countR)
             if conf >= minconf:
-                rules.append(str(LHS) +" -> " + str(RHS) + ", Confidence: " + str(conf) + ", Support: " + str(support) + ", Lift: " + str(lift))
-
+                rules.append(str(LHS) + " -> " + str(RHS) + ", Confidence: " + str(conf) + ", Support: " + str(support)
+                             + ", Lift: " + str(lift))
     return rules
+
 
 def compute_unique_values(header,table):
     '''
@@ -163,10 +171,10 @@ def compute_unique_values(header,table):
     for row in table:
         i = 0
         for value in row:
-            unique_values.add(str(header[i])+ "=" + str(value))
-            i+=1
-
+            unique_values.add(str(header[i]) + "=" + str(value))
+            i += 1
     return sorted(list(unique_values))
+
 
 def frequency(table,item):
     '''
@@ -178,6 +186,7 @@ def frequency(table,item):
             item_count += 1
     return item_count
 
+
 def compute_frequency(table,item):
     '''
     computes the frequency of a specific item occuring in a table
@@ -187,20 +196,19 @@ def compute_frequency(table,item):
         if item.issubset(row):
             item_count += 1
     item_count = item_count/len(table)
-    
     return item_count
 
+
 def main():
-    #replace header with header for watch dataset
+    # Replace header with header for watch dataset
     header = ["total", "price", "condition", "MPN", "movement","case_material","band_material","model","listing_type","deal_type"]
 
-    #read csv of clean ebay data in and assign it to a variable
+    # Read csv of clean ebay data in and assign it to a variable
     watch_dataset = read_csv("final_training_dataset.csv")
     
     watch_rules = apriori(header,watch_dataset,0.35,0.80)
     for rules in watch_rules:
         print(rules)
 
-main()
 
-  
+main()

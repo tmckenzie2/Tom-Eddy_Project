@@ -1,13 +1,14 @@
 import csv
 
-#Reads in a 2d list and a string that you would like to save a file as
-#and writes that 2d list to the file named after save_file_as
+# Reads in a 2d list and a string that you would like to save a file as
+# and writes that 2d list to the file named after save_file_as
 def write_to_file(table_name,save_file_as):
     with open(save_file_as, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerows(table_name)
-        
-#Reads in a csv file and returns a table as a list of lists (rows)
+
+
+# Reads in a csv file and returns a table as a list of lists (rows)
 def read_csv(filename):
     the_file = open(filename, 'r')
     the_reader = csv.reader(the_file, dialect='excel')
@@ -18,8 +19,8 @@ def read_csv(filename):
     the_file.close()
     return table
 
-def clean_watch_model(model_col):
 
+def clean_watch_model(model_col):
     clean_model_col = []
     for i in model_col:
         if("oysterdate".casefold() in i.casefold()):
@@ -82,8 +83,8 @@ def clean_watch_model(model_col):
             clean_model_col.append('Datejust')
         else:
             clean_model_col.append(i)
-
     return (clean_model_col)
+
 
 def clean_case_material(case_col):
 
@@ -105,11 +106,10 @@ def clean_case_material(case_col):
             clean_case_col.append('Stainless Steel')
         else:
             clean_case_col.append(i)
-
     return (clean_case_col)
 
-def clean_band_material(band_col):
 
+def clean_band_material(band_col):
     clean_band_col = []
     for i in band_col:
         if("& 10k".casefold() in i.casefold()):
@@ -146,12 +146,10 @@ def clean_band_material(band_col):
             clean_band_col.append('Rubber')
         else:
             clean_band_col.append(i)
-        
-            
     return (clean_band_col)
 
-def clean_watch_movement(movement_col):
 
+def clean_watch_movement(movement_col):
     clean_movement_col = []
     for i in movement_col:
         if("Quar".casefold() in i.casefold()):
@@ -172,7 +170,6 @@ def clean_watch_movement(movement_col):
     return (clean_movement_col)
 
 
-
 def remove_modelnums_not_applicable(file_name):
      with open('ebay_data_clean.csv', 'w', newline='') as out_file:
          with open(file_name, 'r') as my_file:
@@ -180,6 +177,7 @@ def remove_modelnums_not_applicable(file_name):
                     columns = line.strip().split(',')
                     if all( value.lower() != 'does not apply' for value in columns):
                         out_file.write(line)
+
 
 def get_column(table, column_index):
     '''
@@ -193,6 +191,7 @@ def get_column(table, column_index):
 
     return column
 
+
 def main():
     table = read_csv('ebay_data_dirty.csv')
 
@@ -202,10 +201,9 @@ def main():
         del row[9]
         del row[-1]
 
-    write_to_file(table,'ebay_data_dirty_temp.csv')
+    write_to_file(table, 'ebay_data_dirty_temp.csv')
     remove_modelnums_not_applicable('ebay_data_dirty_temp.csv')
     table_w_modelnums = read_csv('ebay_data_clean.csv')
-
 
     case_col = get_column(table_w_modelnums, 5)
     clean_case = clean_case_material(case_col)
@@ -215,7 +213,6 @@ def main():
         del row[5]
         row.insert(5,str(clean_case[count]))
         count = count + 1
-
 
     movement_col = get_column(table_w_modelnums, 4)
     clean_movement = clean_watch_movement(movement_col)
@@ -235,7 +232,6 @@ def main():
         row.insert(6,str(clean_band[count]))
         count = count + 1
 
-
     mod_col = get_column(table_w_modelnums, 7)
     clean_mod = clean_watch_model(mod_col)
 
@@ -246,11 +242,5 @@ def main():
         count = count + 1
     write_to_file(table_w_modelnums, "ebay_data_clean.csv")
 
-    
-    
-        
-
-    
 
 main()
-    

@@ -3,9 +3,7 @@ from bs4 import BeautifulSoup
 from dateutil.parser import parse
 import pandas as pd
 import requests
-from pandas import ExcelWriter
-from pandas import ExcelFile
-import csv
+
 
 # A function that requests the url, and returns the html text to be parsed by the get_details function
 # The downside to requesting urls this way is that it takes a lot of time...
@@ -16,7 +14,7 @@ def get_page(url):
 
 
 # A function that will parse the html of the page of each item and return an attribute description
-#(from the ebay ITEM SPECIFICS section) based on the attribute name input into the function we can
+# (from the ebay ITEM SPECIFICS section) based on the attribute name input into the function we can
 # utilize this to get attributes for the model, case material, band material, and movement of the
 # watches. There are also other attributes that we can use
 def get_details(url, att_name):
@@ -36,6 +34,7 @@ def get_details(url, att_name):
             att_description = i[3]
     
     return att_description
+
 
 # Must reiterate response to update page count
 def response(Keywords, pageNum, minPrice, maxPrice,api):
@@ -84,10 +83,12 @@ def get_attributes(items,index,df):
             total = price
 
     # push data to df
-        df.loc[index] = [date, total, price, cond, movement, case_material, band_material, model, listingType, start, url]
+        df.loc[index] = [date, total, price, cond, movement, case_material, band_material, model, listingType, start,
+                         url]
         index += 1
 
     return df
+
 
 # Reads in csv file and removes all rows in the file that have 'NULL' values for
 # any of the attributes then saves the rows with values that do not contain 'NULL'
@@ -100,7 +101,6 @@ def remove_NULL_vals(file_name):
                     if all( value != 'NULL' for value in columns):
                         out_file.write(line)
 
-        
 
 def main():
     # Find the raw data using ebay api and export to excel file
@@ -128,8 +128,8 @@ def main():
 
     # Declare data frame
     global df
-    df = pd.DataFrame(columns=('date', 'total', 'price', 'condition', 'movement', 'case material', 'band material', 'model', 'listingType', 'start', 'url'), dtype=float)
-
+    df = pd.DataFrame(columns=('date', 'total', 'price', 'condition', 'movement', 'case material', 'band material',
+                               'model', 'listingType', 'start', 'url'), dtype=float)
 
     # Collect all items from ebay on page1, page2, page3, and page4 
     soup = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
@@ -141,10 +141,10 @@ def main():
     soup_pg_4 = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
     items = soup.find_all('item') + soup_pg_2.find_all('item') + soup_pg_3.find_all('item') + soup_pg_4.find_all('item')
 
-    # call get_attributes function to get the attributes of the watches for a training set some of the attributes will be NULL so we will
+    # Call get_attributes function to get the attributes of the watches for a training set some of the attributes
+    # will be NULL so we will
     # have to clean the data afterwards
     df = get_attributes(items, index, df)
-
 
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)

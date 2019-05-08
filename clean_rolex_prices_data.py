@@ -1,12 +1,14 @@
 import csv
 
+
 #Reads in a 2d list and a string that you would like to save a file as
 #and writes that 2d list to the file named after save_file_as
 def write_to_file(table_name,save_file_as):
     with open(save_file_as, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerows(table_name)
-        
+
+
 #Reads in a csv file and returns a table as a list of lists (rows)
 def read_csv(filename):
     the_file = open(filename, 'r')
@@ -31,6 +33,7 @@ def get_column(table, column_index):
 
     return column
 
+
 def main():
     table = read_csv('rolex_prices_data.csv')
 
@@ -51,5 +54,5 @@ def main():
 
     write_to_file(clean_table,'rolex_prices_data_clean.csv')   
 
+
 main()
-    
