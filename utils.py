@@ -53,3 +53,33 @@ def get_index(myList, attribute):
             index = i
 
     return index
+
+
+# Assign 1 to good deal, 0 to bad deal
+def normalize_deal(data):
+    new_data = []
+    for deal in data:
+        if deal == 'Good deal':
+            new_data.append(1)
+        else:
+            new_data.append(0)
+    return new_data
+
+
+# Assign good deal if prediction is at or above .5
+def classify_deal(data):
+    classify = []
+    for num in data:
+        if num >= .5:
+            classify.append('Good deal')
+        else:
+            classify.append('Bad deal')
+    return classify
+
+
+def replace_deal(table):
+    for row in table:
+        if row[-1] == 'Good deal':
+            row[-1] = 1
+        else:
+            row[-1] = 0

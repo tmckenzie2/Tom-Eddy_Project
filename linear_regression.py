@@ -1,9 +1,4 @@
-# Programmer: Eddy Nassif
-# Class: Data Mining, Spring 2019
-# Programming Assignment #4
-# 3/2/19
-#
-# Description: Simple Classifiers
+# Description: Linear Regression
 import utils as u
 import numpy as np
 
@@ -41,27 +36,6 @@ def least_squares_regression(x, y, test_values, just_stats):
     return predicted_values
 
 
-# Assign 1 to good deal, 0 to bad deal
-def normalize_deal(data):
-    new_data = []
-    for deal in data:
-        if deal == 'Good deal':
-            new_data.append(1)
-        else:
-            new_data.append(0)
-    return new_data
-
-
-def classify_deal(data):
-    classify = []
-    for num in data:
-        if num >= .5:
-            classify.append('Good deal')
-        else:
-            classify.append('Bad deal')
-    return classify
-
-
 def preform_regression(test_num, trials):
     trial = 0
     accuracy = 0
@@ -69,13 +43,13 @@ def preform_regression(test_num, trials):
     data = u.read_csv("final_training_dataset.csv")
     # Get required information and get predictions with regression
     watch_price = u.get_values(data[1:], u.get_index(data, 'price'))
-    watch_deal = normalize_deal(u.get_values(data[1:], u.get_index(data, 'deal_type')))
+    watch_deal = u.normalize_deal(u.get_values(data[1:], u.get_index(data, 'deal_type')))
     # Run Trials
     while trial <= trials:
         random_instances = get_random_instances(test_num, data[1:])  # Don't include header
         guessed_deals = least_squares_regression(watch_price, watch_deal,
                                                  u.get_values(random_instances, u.get_index(data, 'price')), False)
-        guessed_deals = classify_deal(guessed_deals)
+        guessed_deals = u.classify_deal(guessed_deals)
         # Get actual mpg values of random instances
         actual_deals = u.get_values(random_instances, u.get_index(data, 'deal_type'))
 
