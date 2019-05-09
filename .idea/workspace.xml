@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c220cac5-ef82-4b49-993b-8b52a7bbf41b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Watch Dealer-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apriori.py" beforeDir="false" afterPath="$PROJECT_DIR$/apriori.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculate_Training_Set.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculate_training_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Watch Dealer.ipynb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -35,10 +39,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="naive_bayes_classifier.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/naive_bayes_classifier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="final_training_dataset.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final_training_dataset.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-16703" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="join_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/join_data.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="calculate_training_set.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/calculate_training_set.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="179" column="24" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clean_ebay_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clean_ebay_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3638">
+              <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -84,10 +126,13 @@
       <find>p.</find>
       <find>print</find>
       <find>no</find>
+      <find>,p</find>
+      <find>response</find>
     </findStrings>
     <replaceStrings>
       <replace>f</replace>
       <replace>Bad deal</replace>
+      <replace>, p</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -107,12 +152,14 @@
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/naive_bayes.py" />
         <option value="$PROJECT_DIR$/wild_card_classifiers.py" />
+        <option value="$PROJECT_DIR$/Naive Bayes Classifier.py" />
+        <option value="$PROJECT_DIR$/calculate_training_set.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1716" />
+    <option name="y" value="-14" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -164,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Naive Bayes Classifier">
+  <component name="RunManager" selected="Python.calculate_training_set">
     <configuration name="Apriori" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,25 +224,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Apriori.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Calculate_Training_Set" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Calculate_Training_Set.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\anass\Documents\School\Spring 2019\Data Mining\project\apriori.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,6 +243,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\Users\anass\Documents\School\Spring 2019\Data Mining\project\naive_bayes_classifier.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="calculate_training_set" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculate_training_set.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -256,19 +303,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.Calculate_Training_Set" />
       <item itemvalue="Python.Apriori" />
       <item itemvalue="Python.linear_regression" />
       <item itemvalue="Python.naive_bayes" />
       <item itemvalue="Python.Naive Bayes Classifier" />
+      <item itemvalue="Python.calculate_training_set" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.calculate_training_set" />
         <item itemvalue="Python.Naive Bayes Classifier" />
         <item itemvalue="Python.naive_bayes" />
         <item itemvalue="Python.linear_regression" />
         <item itemvalue="Python.Apriori" />
-        <item itemvalue="Python.Calculate_Training_Set" />
       </list>
     </recent_temporary>
   </component>
@@ -286,16 +333,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24815983" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24815983" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14739583" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14739583" />
       <window_info anchor="right" id="R Packages" order="4" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32912722" />
@@ -314,7 +361,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Apriori.py">
+    <entry file="file://$PROJECT_DIR$/apriori.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3451">
           <caret line="203" column="6" selection-start-line="203" selection-start-column="6" selection-end-line="203" selection-end-column="6" />
@@ -324,7 +371,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apriori.py">
+    <entry file="file://$PROJECT_DIR$/apriori.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3451">
           <caret line="203" column="6" selection-start-line="203" selection-start-column="6" selection-end-line="203" selection-end-column="6" />
@@ -357,16 +404,6 @@
     <entry file="file://$PROJECT_DIR$/ebay_data_clean.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/join_data.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clean_ebay_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clean_rolex_prices_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -384,7 +421,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apriori.py">
+    <entry file="file://$PROJECT_DIR$/apriori.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
@@ -394,26 +431,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calculate_Training_Set.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="919">
-          <caret line="211" column="33" lean-forward="true" selection-start-line="211" selection-start-column="33" selection-end-line="211" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="78" selection-start-line="78" selection-end-line="78" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_training_dataset.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16703" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/linear_regression.py">
@@ -441,6 +463,41 @@
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naive_bayes_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_training_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16703" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/join_data.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean_ebay_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3638">
+          <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculate_training_set.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="179" column="24" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

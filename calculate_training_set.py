@@ -3,8 +3,6 @@ from bs4 import BeautifulSoup
 from dateutil.parser import parse
 import pandas as pd
 import requests
-from pandas import ExcelWriter
-from pandas import ExcelFile
 import csv
 
 '''
@@ -154,34 +152,30 @@ def write_to_file(table_name, save_file_as):
 
 def main():
     # Find the raw data using ebay api and export to excel file
-
-    # Launch Mode
-
-    Keywords = "Rolex Wristwatch"
-    condition = "Used"
-    minPrice = 3000
-    maxPrice = 12000
-
-    # catId = input('Enter your category \n')
     api = finding(appid='EddyNass-Scraper-PRD-651ca6568-7ae32d61', config_file=None)
 
     # Data Load Prep
-    pageNum = 1
     index = 0
 
     # Declare data frame
-    global df
-    df = pd.DataFrame(columns=(
-    'date', 'total', 'price', 'condition', 'MPN', 'movement', 'case material', 'band material', 'model', 'listingType',
-    'start', 'url'), dtype=float)
+    df = pd.DataFrame(columns=('date', 'total', 'price', 'condition', 'MPN', 'movement', 'case material',
+                               'band material', 'model', 'listingType', 'start', 'url'), dtype=float)
 
     # Run this to collect data from the ebay website with BeatifulSoup
     # This code will return 100 results per page
-    soup = BeautifulSoup(response(Keywords, 1, minPrice, maxPrice, api).content, 'lxml')
-    pageNum += 1
+    Keywords = "Rolex Wristwatch"
+    minPrice = 3000
+    maxPrice = 12000
+    pageNum = 1
+    # Collect all items from ebay on page1 through 4
+    while pageNum <= 4:
+        soup = BeautifulSoup(response(Keywords, pageNum, minPrice, maxPrice, api).content, 'lxml')
+        if pageNum == 1:
+            items = soup.find_all('item')
+        else:
+            items += soup.find_all('item')
+        pageNum += 1
 
-    items = soup.find_all(
-        'item')  # call get_attributes function to get the attributes of the watches for a training set some of the attributes will be NULL so we will
     # have to clean the data afterwards
     df = get_attributes(items, index, df)
 
