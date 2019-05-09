@@ -48,6 +48,8 @@ def get_details(url, att_name):
     att_description = "NULL"
     data = []
     table = url.find(attrs={'class': 'section'})
+    print(table)
+    quit()
     if table is not None:
         rows = table.findAll('tr')
         for row in rows:
