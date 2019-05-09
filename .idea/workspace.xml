@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c220cac5-ef82-4b49-993b-8b52a7bbf41b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/watch_dealer-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/watch_dealer-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watch_dealer.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/watch_dealer.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="wild_card_classifiers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wild_card_classifiers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="46" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="46" />
+            <state relative-caret-position="646">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="e#342#359#0" expanded="true" />
               </folding>
@@ -35,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="naive_bayes_classifier.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="naive_bayes_classifier.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/naive_bayes_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="-2312">
+              <caret line="84" column="92" lean-forward="true" selection-start-line="84" selection-start-column="92" selection-end-line="84" selection-end-column="92" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -47,7 +48,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="final_training_dataset.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="linear_regression.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/linear_regression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="final_training_dataset.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final_training_dataset.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-109">
@@ -92,15 +102,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
               <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
             </state>
           </provider>
         </entry>
@@ -212,8 +213,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.wild_card_classifiers">
-    <configuration name="Naive Bayes Classifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.KNN_Classifier">
+    <configuration name="KNN_Classifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -225,7 +226,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\anass\Documents\School\Spring 2019\Data Mining\project\naive_bayes_classifier.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KNN_Classifier.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -267,7 +268,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="naive_bayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="naive_bayes_classifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -279,7 +280,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\anass\Documents\School\Spring 2019\Data Mining\project\wild_card_classifiers.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/naive_bayes_classifier.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -305,18 +306,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.linear_regression" />
-      <item itemvalue="Python.naive_bayes" />
-      <item itemvalue="Python.Naive Bayes Classifier" />
       <item itemvalue="Python.calculate_training_set" />
       <item itemvalue="Python.wild_card_classifiers" />
+      <item itemvalue="Python.naive_bayes_classifier" />
+      <item itemvalue="Python.KNN_Classifier" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.KNN_Classifier" />
+        <item itemvalue="Python.naive_bayes_classifier" />
+        <item itemvalue="Python.linear_regression" />
         <item itemvalue="Python.wild_card_classifiers" />
         <item itemvalue="Python.calculate_training_set" />
-        <item itemvalue="Python.Naive Bayes Classifier" />
-        <item itemvalue="Python.naive_bayes" />
-        <item itemvalue="Python.linear_regression" />
       </list>
     </recent_temporary>
   </component>
@@ -341,9 +342,9 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24815983" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24815983" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14739583" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14739583" />
       <window_info anchor="right" id="R Packages" order="4" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32912722" />
@@ -432,31 +433,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="51" />
-          <folding>
-            <element signature="e#133#150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naive_bayes_classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -483,16 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wild_card_classifiers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="46" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="46" />
-          <folding>
-            <element signature="e#342#359#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clean_ebay_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1071">
@@ -504,6 +475,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-109">
           <caret line="990" column="97" lean-forward="true" selection-start-line="990" selection-start-column="97" selection-end-line="990" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wild_card_classifiers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#342#359#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linear_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naive_bayes_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2312">
+          <caret line="84" column="92" lean-forward="true" selection-start-line="84" selection-start-column="92" selection-end-line="84" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
