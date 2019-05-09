@@ -83,3 +83,19 @@ def replace_deal(table):
             row[-1] = 1
         else:
             row[-1] = 0
+
+
+def get_frequencies(table, column_index):
+    column = sorted(get_column(table, column_index))
+    values = []
+    counts = []
+
+    for value in column:
+        if value not in values:
+            values.append(value)
+            # first time we have seen this value
+            counts.append(1)
+        else:  # we've seen it before, the list is sorted...
+            counts[-1] += 1
+
+    return values, counts
